@@ -134,11 +134,12 @@ async function atualizarUsuario() {
             return;
         }
 
-        console.log(`\nUsuário encontrado:`);
+        console.log(`\nUsuário atual:`);
         console.log(`ID: ${user.id}`);
         console.log(`Nome: ${user.name}`);
         console.log(`Email: ${user.email}`);
         console.log(`Role: ${user.role}`);
+        console.log('\nDeixe em branco para manter o valor atual.\n');
 
         const name = await question(`Novo nome [${user.name}]:`);
         const email = await question(`Novo email [${user.email}]:`);
@@ -153,7 +154,7 @@ async function atualizarUsuario() {
 
         const updatesUser = await models.User.findByPk(id);
 
-        console.log(`\nUsuário encontrado:`);
+        console.log(`\nUsuário atualizado:`);
         console.log(`ID: ${updatesUser.id}`);
         console.log(`Nome: ${updatesUser.name}`);
         console.log(`Email: ${updatesUser.email}`);
